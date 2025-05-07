@@ -1,0 +1,245 @@
+/* Hello World! :) */
+
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Serif', serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f9f5e9;
+  overflow-x: hidden;
+}
+
+.pages {
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.page {
+  min-height: 100vh;
+  padding: 2rem;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.page h1, .page h2 {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.page h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease-in-out both;
+}
+
+.page h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.5rem;
+  animation: fadeIn 1.5s ease-in-out 0.3s both;
+}
+
+.page p {
+  max-width: 800px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  animation: fadeIn 1.5s ease-in-out 0.6s both;
+}
+
+.page:nth-child(1) {
+  background: url('https://st4.depositphotos.com/1063437/27567/i/450/depositphotos_275670730-stock-photo-registan-an-old-public-square.jpg') no-repeat center/cover;
+
+}
+
+.page:nth-child(2) {
+  background: url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+
+}
+
+.page:nth-child(3) {
+  background: url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+
+}
+
+.page:nth-child(4) {
+  background: url('https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+
+}
+
+.page:nth-child(5) {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGSXSUlmxwbvDAnYd9TAAfJZuo59dlGya_7w&s') no-repeat center/cover;
+
+}
+
+.page:nth-child(6) {
+  background: url('https://upload.wikimedia.org/wikipedia/commons/2/25/Karazin_-_Entry_of_Russian_troops_into_Samarkand_1868.jpg') no-repeat center/cover;
+
+}
+
+.page:nth-child(7) {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG7CHpkXiAfDWQNNmB1nmaKhvFXaN9RJn1IQ&s') no-repeat center/cover;
+
+}
+
+.page:nth-child(8) {
+  background: url('https://images.unsplash.com/photo-1579033462043-0f11a7862f7d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center/cover;
+
+}
+
+.page:nth-child(9) {
+  background: url('https://static.norma.uz/images/176061_22988f7457a3cb3ef94ae82b3d45.jpg') no-repeat center/cover;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(1.1); }
+  to { transform: scale(1); }
+}
+
+.page {
+  animation: zoomIn 20s ease-in-out infinite alternate;
+}
+
+.credit {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 3px;
+  z-index: 100;
+  transition: background 0.3s ease;
+}
+
+.credit:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .page h1 {
+    font-size: 2.5rem;
+  }
+  .page h2 {
+    font-size: 2rem;
+  }
+  .page p {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
+
+.page::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  transform: scale(1.1);
+  filter: blur(2px);
+  opacity: 0.7;
+}
+
+:root {
+  --unused-color: #ff0000;
+}
+
+.page h1 {
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 400px) {
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  .pages {
+    scroll-snap-type: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .page {
+    min-height: 100vh;
+    padding: 1rem;
+    scroll-snap-align: none;
+  }
+  
+  .page h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
+    animation: unset;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .page h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    animation: unset;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .page p {
+    font-size: 1rem;
+    padding: 0 1rem;
+    animation: unset;
+    opacity: 1;
+    transform: none;
+  }
+  
+  .page::before {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .credit {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
